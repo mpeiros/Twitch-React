@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Game from './Game';
 
 class GameList extends Component {
   state = {
@@ -13,13 +14,7 @@ class GameList extends Component {
 
   renderGames() {
     return this.state.topGames.map(gameData => {
-      return (
-        <div key={gameData.game._id}>
-          <img src={gameData.game.box.medium} alt="Game Box Art"/>
-          <p>{gameData.game.name}</p>
-          <p>{gameData.viewers}</p>
-        </div>
-      );
+      return <Game key={gameData.game._id} gameData={gameData} />;
     });
   }
 

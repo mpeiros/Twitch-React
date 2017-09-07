@@ -1,11 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Game extends Component {
-  render() {
-    return (
-      <div></div>
-    );
-  }
-}
+const Game = ({ gameData }) => {
+  return (
+    <div>
+      <img src={gameData.game.box.medium} alt="Game Box Art"/>
+      <p>{gameData.game.name}</p>
+      <p>{gameData.viewers}</p>
+    </div>
+  );
+};
 
 export default Game;
