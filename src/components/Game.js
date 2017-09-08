@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Game = ({ gameData }) => {
+const Game = ({ gameData: { game, viewers } }) => {
   return (
     <div>
-      <img src={gameData.game.box.medium} alt="Game Box Art"/>
-      <p>{gameData.game.name}</p>
-      <p>{gameData.viewers}</p>
+      <img src={game.box.medium} alt="Game Box Art" />
+      <p>{game.name}</p>
+      <p>{viewers}</p>
     </div>
   );
 };
