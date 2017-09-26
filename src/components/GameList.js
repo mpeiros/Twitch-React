@@ -20,7 +20,7 @@ class GameList extends Component {
 
   render() {
     return (
-      <div>
+      <div className="row">
         {this.renderGames()}
       </div>
     );
