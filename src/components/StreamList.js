@@ -8,8 +8,15 @@ class StreamList extends Component {
   };
 
   componentDidMount() {
-    axios.get('http://localhost:5000/api/streams')
-      .then(response => this.setState({ streams: response.data.streams }));
+    const { game } = this.props.match.params;
+
+    if (game) {
+      axios.get(`http://localhost:5000/api/streams/${game}`)
+        .then(response => this.setState({ streams: response.data.streams }));
+    } else {
+      axios.get('http://localhost:5000/api/streams')
+        .then(response => this.setState({ streams: response.data.streams }));
+    }
   }
 
   renderStreams() {

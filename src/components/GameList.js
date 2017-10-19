@@ -12,9 +12,20 @@ class GameList extends Component {
       .then(response => this.setState({ topGames: response.data.top }));
   }
 
+  navigateToGame(gameName) {
+    this.props.history.push(`/streams/${gameName}`)
+  }
+
   renderGames() {
     return this.state.topGames.map(gameData => {
-      return <Game key={gameData.game._id} gameData={gameData} />;
+      return (
+        <div 
+          key={gameData.game._id}
+          onClick={() => this.navigateToGame(gameData.game.name)}
+        >
+          <Game gameData={gameData} />
+        </div>
+      );
     });
   }
 

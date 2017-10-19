@@ -11,6 +11,7 @@ class App extends Component {
           <div>
             <Route exact path="/" component={GameList} />      
             <Route exact path="/streams" component={StreamList} />      
+            <Route exact path="/streams/:game" component={StreamList} />      
           </div>
         </BrowserRouter>
       </div>
